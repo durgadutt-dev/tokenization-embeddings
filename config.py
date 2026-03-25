@@ -18,22 +18,22 @@ class ModelConfig:
     # Options: "txt", "tinystories", "wikitext"
     data_source: str  = "tinystories"
 
-    # Vocabulary / tokenizer
-    vocab_size: int   = 1000   # BPE target vocabulary size
+    # Vocabulary — 8192 covers most TinyStories words as whole tokens
+    vocab_size: int   = 8192
 
     # Model dimensions
-    embed_dim: int    = 128    # size of each token embedding vector
-    num_heads: int    = 4      # attention heads (embed_dim must be divisible)
-    num_layers: int   = 2      # number of transformer blocks
-    ffn_dim: int      = 512    # hidden size inside feed-forward layers
-    max_seq_len: int  = 16     # maximum token sequence length
+    embed_dim: int    = 256    # size of each token embedding vector
+    num_heads: int    = 8      # attention heads (embed_dim must be divisible)
+    num_layers: int   = 4      # number of transformer blocks
+    ffn_dim: int      = 1024   # 4× embed_dim (standard ratio)
+    max_seq_len: int  = 256    # captures most of a short story
 
     # Training
-    batch_size: int   = 16
-    epochs: int       = 10
+    batch_size: int   = 32     # reduce to 16 if GPU runs out of memory
+    epochs: int       = 3      # 2M stories — 1 epoch is already a lot of data
     learning_rate: float = 3e-4
     dropout: float    = 0.1
 
     # Generation
-    max_new_tokens: int = 50   # tokens to generate per prompt
-    temperature: float  = 1.0  # > 1 more random, < 1 more focused
+    max_new_tokens: int = 200  # enough for a short story
+    temperature: float  = 0.8  # slightly focused
