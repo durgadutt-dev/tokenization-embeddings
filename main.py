@@ -37,12 +37,12 @@ def main() -> None:
     arg = sys.argv[1] if len(sys.argv) > 1 else "all"
 
     # ── 1. Tokenization (always runs — other steps depend on it) ──────
-    tokenizer, train_ids, val_ids = tokenization.build_tokenizer(config)
+    tokenizer, train_corpus, val_corpus = tokenization.build_tokenizer(config)
 
     # ── 2. Data preparation ───────────────────────────────────────────
     if arg in ("all", "data"):
-        train_loader, val_loader = data.get_dataloaders(config)
-        data.save_batches_preview(train_loader, config, train_ids)
+        train_loader, val_loader = data.get_dataloaders(tokenizer, train_corpus, val_corpus, config)
+        data.save_batches_preview(train_loader, config)
 
     # ── 3. Model summary ──────────────────────────────────────────────
     if arg in ("all", "model"):
@@ -53,7 +53,7 @@ def main() -> None:
 
     # ── 4. Training ───────────────────────────────────────────────────
     if arg in ("all", "train"):
-        train_loader, val_loader = data.get_dataloaders(config)
+        train_loader, val_loader = data.get_dataloaders(tokenizer, train_corpus, val_corpus, config)
         slm = model_module.SLM(config).to(config.device)
         print(f"Device  : {config.device}")
         print(f"Training SLM  ({slm.count_parameters():,} parameters)\n")

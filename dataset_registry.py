@@ -48,6 +48,9 @@ DATASETS: dict[str, callable] = {
     "wikitext":    load_wikitext,
 }
 
+# Large datasets — token IDs are NOT cached to disk; encoded on the fly
+LARGE_DATASETS = {"tinystories", "wikitext"}
+
 
 def load(name: str) -> tuple[list[str], list[str]]:
     """

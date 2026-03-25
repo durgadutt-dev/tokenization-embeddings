@@ -13,3 +13,6 @@ build/slm.pt
 data_files/train_tokens.json
 data_files/tokenizer.json
 data_files/val_tokens.json
+__pycache__/dataset_registry.cpython-312.pyc
+__pycache__/datasets.cpython-312.pyc
+__pycache__/datasets.cpython-312.pyc
