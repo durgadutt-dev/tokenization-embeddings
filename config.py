@@ -14,9 +14,12 @@ class ModelConfig:
     # Device — automatically uses GPU if available (e.g. Colab T4)
     device: str = field(default_factory=lambda: "cuda" if torch.cuda.is_available() else "cpu")
 
+    # Dataset — key from datasets.DATASETS registry
+    # Options: "txt", "tinystories", "wikitext"
+    data_source: str  = "tinystories"
+
     # Vocabulary / tokenizer
     vocab_size: int   = 1000   # BPE target vocabulary size
-    corpus_file: str  = "corpus.txt"
 
     # Model dimensions
     embed_dim: int    = 128    # size of each token embedding vector

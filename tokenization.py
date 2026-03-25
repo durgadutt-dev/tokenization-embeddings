@@ -10,11 +10,10 @@ from pathlib import Path
 
 from bpe_tokenizer import BPETokenizer
 from config import ModelConfig
+import datasets as dataset_registry
 
 
 DATA_DIR       = Path(__file__).parent / "data_files"
-TRAIN_FILE     = DATA_DIR / "train.txt"
-VAL_FILE       = DATA_DIR / "val.txt"
 TOKENIZER_FILE = DATA_DIR / "tokenizer.json"
 TRAIN_IDS_FILE = DATA_DIR / "train_tokens.json"
 VAL_IDS_FILE   = DATA_DIR / "val_tokens.json"
@@ -24,19 +23,17 @@ def build_tokenizer(config: ModelConfig) -> tuple[BPETokenizer, list[int], list[
     """
     Return a trained BPETokenizer, train token IDs, and val token IDs.
 
-    - Tokenizer is trained on train.txt only
-    - Both splits are encoded with the same tokenizer
-    - All outputs are cached on disk; reloaded on subsequent runs
+    - Dataset loaded via config.data_source (see datasets.py registry)
+    - Tokenizer is trained on train corpus only
+    - Both splits encoded with the same tokenizer
+    - All outputs cached on disk; reloaded on subsequent runs
 
     Returns:
         tokenizer : trained BPETokenizer
-        train_ids : flat list of token IDs for train.txt
-        val_ids   : flat list of token IDs for val.txt
+        train_ids : flat list of token IDs for train corpus
+        val_ids   : flat list of token IDs for val corpus
     """
-    with open(TRAIN_FILE) as f:
-        train_corpus = [line.strip() for line in f if line.strip()]
-    with open(VAL_FILE) as f:
-        val_corpus = [line.strip() for line in f if line.strip()]
+    train_corpus, val_corpus = dataset_registry.load(config.data_source)
 
     if TOKENIZER_FILE.exists():
         tokenizer = BPETokenizer.load(str(TOKENIZER_FILE))
