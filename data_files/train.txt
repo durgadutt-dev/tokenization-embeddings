@@ -1,0 +1,30 @@
+Machine learning is a subset of artificial intelligence focused on data patterns.
+Neural networks learn by adjusting weights during the backpropagation process.
+Transformers use self attention to capture long range dependencies in sequences.
+Embeddings represent words as dense vectors in a continuous high dimensional space.
+Gradient descent minimizes the loss function by updating model parameters iteratively.
+Convolutional neural networks are widely used for image recognition tasks.
+Recurrent networks process sequences but struggle with long term dependencies.
+The softmax function converts raw scores into a probability distribution.
+Overfitting occurs when a model performs well on training data but poorly on new data.
+Regularization techniques like dropout help prevent overfitting in deep networks.
+The human brain contains approximately 86 billion neurons connected by synapses.
+Quantum computing uses quantum mechanical phenomena to perform calculations.
+The Internet was originally developed as a military communication network.
+DNA carries the genetic instructions for the development of all living organisms.
+Photosynthesis is the process by which plants convert sunlight into energy.
+The Amazon rainforest produces about 20 percent of the world oxygen supply.
+Scientists have discovered a new exoplanet that may support liquid water.
+The government announced a new policy on renewable energy investments.
+Stock markets fell sharply after inflation data exceeded expectations.
+Researchers developed a vaccine that shows promising results against malaria.
+NASA launched a new satellite to monitor global climate patterns.
+The noise cancelling headphones are amazing and the battery lasts 30 hours.
+The laptop runs fast but the keyboard feels a bit shallow for long typing sessions.
+Best running shoes I have ever owned the cushioning is incredible.
+The Eiffel Tower was completed in 1889 and stands 330 metres tall in Paris.
+Tokenization splits text into smaller units called tokens before processing.
+Attention mechanisms allow models to focus on relevant parts of the input sequence.
+Language models are trained to predict the next token given the previous context.
+Transfer learning allows pretrained models to be fine tuned on specific tasks.
+The transformer architecture has become the foundation of modern language models.
