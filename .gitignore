@@ -3,16 +3,10 @@
 __pycache__/bpe_tokenizer.cpython-312.pyc
 __pycache__/config.cpython-312.pyc
 __pycache__/data.cpython-312.pyc
+__pycache__/dataset_registry.cpython-312.pyc
 __pycache__/embeddings_demo.cpython-312.pyc
 __pycache__/generate.cpython-312.pyc
 __pycache__/model.cpython-312.pyc
 __pycache__/tokenization_demo.cpython-312.pyc
 __pycache__/tokenization.cpython-312.pyc
 __pycache__/train.cpython-312.pyc
-build/slm.pt
-data_files/train_tokens.json
-data_files/tokenizer.json
-data_files/val_tokens.json
-__pycache__/dataset_registry.cpython-312.pyc
-__pycache__/datasets.cpython-312.pyc
-__pycache__/datasets.cpython-312.pyc

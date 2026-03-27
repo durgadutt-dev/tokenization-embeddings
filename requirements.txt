@@ -1,3 +1,5 @@
-tiktoken
-sentence-transformers
-numpy
+torch>=2.3.0
+transformers==4.41.2
+accelerate>=0.33.0
+sentencepiece
+protobuf
