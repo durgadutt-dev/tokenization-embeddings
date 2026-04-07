@@ -3,36 +3,34 @@ llm_client.py
 -------------
 Thin wrapper around the configured model backend (Ollama or HuggingFace Transformers).
 
-Usage anywhere in the project:
+Usage:
     from llm_client import call_model
     reply = call_model([{"role": "user", "content": "Hello"}])
-
-To switch backends, change BACKEND in config.py.
 """
 import logging
 import requests
 from config import BACKEND, OLLAMA_MODEL, MAX_NEW_TOKENS, TEMPERATURE, DO_SAMPLE
 
-# Load the HuggingFace model once at import time if transformers backend is active.
-# This is intentionally done at module level so the model is shared across callers.
 if BACKEND == "transformers":
     from model import load_model, generate as _transformers_generate
     _model, _tokenizer = load_model()
 
 
-def call_model(messages: list[dict]) -> str:
+def call_model(
+    messages: list[dict],
+    max_new_tokens: int = MAX_NEW_TOKENS,
+    timeout: int = 120,
+) -> str:
     """
     Send a list of chat messages to the configured backend and return the reply.
 
     Args:
-        messages: List of {"role": "system"|"user"|"assistant", "content": str}.
-                  System messages are supported by Ollama natively.
-                  For the transformers backend they are flattened into the prompt.
+        messages:       List of {"role": "system"|"user"|"assistant", "content": str}.
+        max_new_tokens: Token budget for the response.
+        timeout:        Request timeout in seconds (Ollama only).
 
     Returns:
-        The model's reply as a plain string.
-        Returns a user-friendly error string (prefixed with ⚠️) on failure
-        so callers don't need to handle exceptions.
+        The model reply as a plain string, or a ⚠️-prefixed error string on failure.
     """
     try:
         if BACKEND == "ollama":
@@ -43,32 +41,28 @@ def call_model(messages: list[dict]) -> str:
                     "messages": messages,
                     "stream": False,
                     "options": {
-                        "num_predict": MAX_NEW_TOKENS,
+                        "num_predict": max_new_tokens,
                         "temperature": TEMPERATURE,
                     },
                 },
-                timeout=120,
+                timeout=timeout,
             )
             response.raise_for_status()
             return response.json()["message"]["content"]
 
-        # Transformers backend: flatten the message list into a single prompt string.
-        # TODO (Colab migration): replace with tokenizer.apply_chat_template()
-        # to properly handle multi-turn history and system prompts.
-        prompt = "\n".join(
-            f"{m['role'].upper()}: {m['content']}" for m in messages
-        )
+        # Transformers backend
+        prompt = "\n".join(f"{m['role'].upper()}: {m['content']}" for m in messages)
         return _transformers_generate(
             _model, _tokenizer, prompt,
-            max_new_tokens=MAX_NEW_TOKENS,
+            max_new_tokens=max_new_tokens,
             temperature=TEMPERATURE,
             do_sample=DO_SAMPLE,
         )
 
     except requests.exceptions.ConnectionError:
-        return "⚠️ Cannot reach Ollama. Make sure it is running: `ollama serve`"
+        return "⚠️ Cannot reach Ollama. Run: ollama serve"
     except requests.exceptions.Timeout:
-        return "⚠️ Model timed out. Try a shorter question or reduce MAX_NEW_TOKENS in config.py."
+        return "⚠️ Model timed out — try a shorter prompt or increase timeout."
     except Exception as e:
         logging.error(f"call_model error: {e}")
         return f"⚠️ Unexpected error: {e}"

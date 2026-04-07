@@ -1,0 +1,20 @@
+[
+  {
+    "file_path": "./catalog/plan_aetna_ppo_gold.json",
+    "plan_id": "AE-LG-PPO-G1500-2024",
+    "plan_name": "Aetna Choice POS II \u2014 Gold 1500",
+    "insurer": "Aetna Life Insurance Company",
+    "plan_type": "PPO",
+    "metal_level": "Gold",
+    "network_name": "Aetna Choice POS II"
+  },
+  {
+    "file_path": "./catalog/plan_cigna_hmo_silver.json",
+    "plan_id": "CI-LG-HMO-S2500-2024",
+    "plan_name": "Cigna LocalPlus \u2014 Silver 2500 HMO",
+    "insurer": "Cigna Health and Life Insurance Company",
+    "plan_type": "HMO",
+    "metal_level": "Silver",
+    "network_name": "Cigna LocalPlus"
+  }
+]

@@ -1,0 +1,316 @@
+{
+  "plan_details": {
+    "plan_name": "Aetna Choice POS II — Gold 1500",
+    "plan_id": "AE-LG-PPO-G1500-2024",
+    "plan_type": "PPO",
+    "insurer": "Aetna Life Insurance Company",
+    "effective_date": "2024-01-01",
+    "plan_year": "2024",
+    "group_size": "Large Group (51+)",
+    "coverage_area": "National",
+    "network_name": "Aetna Choice POS II",
+    "formulary_tier": "Gold",
+    "metal_level": "Gold",
+    "actuarial_value": "0.80",
+    "plan_document_url": null,
+    "naic_code": "60054"
+  },
+  "deductibles": {
+    "in_network": {
+      "individual": 1500,
+      "family": 3000,
+      "currency": "USD",
+      "notes": "Does not apply to preventive care or copay-based services"
+    },
+    "out_of_network": {
+      "individual": 3000,
+      "family": 6000,
+      "currency": "USD",
+      "notes": "Applies to all covered out-of-network services"
+    },
+    "combined_in_out_network": false
+  },
+  "out_of_pocket_maximum": {
+    "in_network": {
+      "individual": 5000,
+      "family": 10000,
+      "currency": "USD",
+      "includes_deductible": true,
+      "includes_copays": true,
+      "includes_coinsurance": true
+    },
+    "out_of_network": {
+      "individual": 10000,
+      "family": 20000,
+      "currency": "USD",
+      "includes_deductible": true,
+      "includes_copays": false,
+      "includes_coinsurance": true
+    }
+  },
+  "copays": {
+    "primary_care_visit": {
+      "in_network": "$30",
+      "out_of_network": "40% coinsurance after deductible",
+      "applies_before_deductible": true
+    },
+    "specialist_visit": {
+      "in_network": "$60",
+      "out_of_network": "40% coinsurance after deductible",
+      "applies_before_deductible": true
+    },
+    "urgent_care": {
+      "in_network": "$75",
+      "out_of_network": "$75",
+      "applies_before_deductible": true
+    },
+    "emergency_room": {
+      "in_network": "$350 per visit",
+      "out_of_network": "$350 per visit (waived if admitted)",
+      "applies_before_deductible": false
+    },
+    "telehealth": {
+      "in_network": "$15",
+      "out_of_network": "Not covered",
+      "applies_before_deductible": true
+    }
+  },
+  "coinsurance": {
+    "in_network": "20%",
+    "out_of_network": "40%",
+    "applies_after_deductible": true
+  },
+  "prescription_drugs": {
+    "formulary_name": "Aetna Standard Formulary 2024",
+    "deductible": {
+      "individual": 0,
+      "family": 0,
+      "notes": "Separate drug deductible does not apply; medical deductible applies"
+    },
+    "tiers": {
+      "tier_1_generic": {
+        "retail_30_day": "$10",
+        "mail_order_90_day": "$20",
+        "notes": "Preferred generics"
+      },
+      "tier_2_preferred_brand": {
+        "retail_30_day": "$45",
+        "mail_order_90_day": "$90",
+        "notes": "After deductible"
+      },
+      "tier_3_non_preferred_brand": {
+        "retail_30_day": "$90",
+        "mail_order_90_day": "$180",
+        "notes": "After deductible"
+      },
+      "tier_4_specialty": {
+        "retail_30_day": "25% up to $250 per fill",
+        "mail_order_90_day": "25% up to $500 per fill",
+        "notes": "Specialty pharmacy required; prior auth required"
+      }
+    },
+    "mail_order_required_for_maintenance": true,
+    "specialty_pharmacy": "Aetna Specialty Pharmacy or approved specialty network"
+  },
+  "covered_services": {
+    "preventive_care": {
+      "in_network": "No charge",
+      "out_of_network": "40% coinsurance after deductible",
+      "notes": "ACA-mandated preventive services covered 100%"
+    },
+    "inpatient_hospital": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "outpatient_surgery": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "lab_tests": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible"
+    },
+    "imaging_xray": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible"
+    },
+    "imaging_ct_mri_pet": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "mental_health_outpatient": {
+      "in_network": "$30 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "applies_before_deductible": true,
+      "parity_compliant": true
+    },
+    "mental_health_inpatient": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "substance_use_disorder_outpatient": {
+      "in_network": "$30 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "parity_compliant": true
+    },
+    "substance_use_disorder_inpatient": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "physical_therapy": {
+      "in_network": "$60 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "visit_limit": "60 visits per year combined PT/OT/ST"
+    },
+    "occupational_therapy": {
+      "in_network": "$60 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "visit_limit": "60 visits per year combined PT/OT/ST"
+    },
+    "speech_therapy": {
+      "in_network": "$60 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "visit_limit": "60 visits per year combined PT/OT/ST"
+    },
+    "chiropractic_care": {
+      "in_network": "$60 copay per visit",
+      "out_of_network": "40% coinsurance after deductible",
+      "visit_limit": "30 visits per year"
+    },
+    "home_health_care": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "visit_limit": "120 visits per year",
+      "preauthorization_required": true
+    },
+    "skilled_nursing_facility": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "day_limit": "120 days per year",
+      "preauthorization_required": true
+    },
+    "hospice_care": {
+      "in_network": "No charge",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "durable_medical_equipment": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": "For items over $500"
+    },
+    "maternity_prenatal": {
+      "in_network": "$30 copay first visit then no charge",
+      "out_of_network": "40% coinsurance after deductible"
+    },
+    "maternity_delivery": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "40% coinsurance after deductible",
+      "preauthorization_required": true
+    },
+    "pediatric_dental": {
+      "in_network": "Not covered — separate pediatric dental plan required",
+      "out_of_network": "Not covered"
+    },
+    "pediatric_vision": {
+      "in_network": "One exam per year no charge; frames/lenses $150 allowance",
+      "out_of_network": "Not covered"
+    },
+    "acupuncture": {
+      "in_network": "Not covered",
+      "out_of_network": "Not covered"
+    },
+    "bariatric_surgery": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true,
+      "notes": "Must meet clinical criteria"
+    },
+    "infertility_treatment": {
+      "in_network": "Diagnostic services covered at 20% after deductible; treatment not covered",
+      "out_of_network": "Not covered"
+    },
+    "transplants": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true,
+      "notes": "Must use Aetna Institute of Excellence (IOE) facility"
+    },
+    "ambulance": {
+      "in_network": "20% coinsurance after deductible",
+      "out_of_network": "20% coinsurance after deductible",
+      "notes": "Out-of-network treated as in-network for emergency transport"
+    },
+    "vision_exam_adult": {
+      "in_network": "Not covered",
+      "out_of_network": "Not covered"
+    },
+    "dental_adult": {
+      "in_network": "Not covered",
+      "out_of_network": "Not covered"
+    }
+  },
+  "visit_limits": {
+    "physical_therapy": "60 combined PT/OT/ST visits per plan year",
+    "occupational_therapy": "60 combined PT/OT/ST visits per plan year",
+    "speech_therapy": "60 combined PT/OT/ST visits per plan year",
+    "chiropractic": "30 visits per plan year",
+    "home_health": "120 visits per plan year",
+    "skilled_nursing_facility": "120 days per plan year",
+    "mental_health_outpatient": "Unlimited (parity)",
+    "substance_use_disorder_outpatient": "Unlimited (parity)"
+  },
+  "preauthorization_requirements": [
+    "Inpatient hospital admission (non-emergency)",
+    "Skilled nursing facility",
+    "Home health care",
+    "Outpatient surgery",
+    "CT, MRI, PET scans",
+    "Hospice care",
+    "Bariatric surgery",
+    "Organ and tissue transplants",
+    "Specialty pharmacy drugs (Tier 4)",
+    "Durable medical equipment over $500",
+    "Maternity delivery (notification within 48 hours)"
+  ],
+  "network_information": {
+    "network_type": "PPO with POS option",
+    "requires_pcp": false,
+    "requires_referrals": false,
+    "out_of_network_covered": true,
+    "provider_directory_url": null,
+    "out_of_network_balance_billing": "Member responsible for balance billing from OON providers",
+    "tiered_network": false,
+    "national_network": true
+  },
+  "exclusions": [
+    "Cosmetic surgery unless medically necessary",
+    "Experimental or investigational treatments",
+    "Non-emergency care received outside the US without prior approval",
+    "Adult dental care",
+    "Adult routine vision exams and eyewear",
+    "Acupuncture",
+    "Infertility treatment (diagnostic only covered)",
+    "Weight loss programs (except bariatric surgery with criteria met)",
+    "Long-term custodial care",
+    "Private duty nursing in hospital",
+    "Services for which no charge would be made absent insurance"
+  ],
+  "additional_benefits": {
+    "wellness_programs": "Aetna Healthy Actions — up to $500 annual incentive for completing health activities",
+    "employee_assistance_program": "Aetna Resources For Living — 8 free counseling sessions per issue per year",
+    "nurse_advice_line": "24/7 — 1-800-556-1555",
+    "telemedicine": "Teladoc — $15 copay per visit",
+    "fitness_reimbursement": "$20/month gym membership reimbursement",
+    "second_opinion": "Covered as specialist visit"
+  },
+  "cost_sharing_reductions": {
+    "eligible": false,
+    "notes": "Large group plan; CSR not applicable"
+  }
+}

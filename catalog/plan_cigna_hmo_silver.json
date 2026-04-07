@@ -1,0 +1,331 @@
+{
+  "plan_details": {
+    "plan_name": "Cigna LocalPlus — Silver 2500 HMO",
+    "plan_id": "CI-LG-HMO-S2500-2024",
+    "plan_type": "HMO",
+    "insurer": "Cigna Health and Life Insurance Company",
+    "effective_date": "2024-01-01",
+    "plan_year": "2024",
+    "group_size": "Large Group (51+)",
+    "coverage_area": "Regional — LocalPlus Network",
+    "network_name": "Cigna LocalPlus",
+    "formulary_tier": "Silver",
+    "metal_level": "Silver",
+    "actuarial_value": "0.70",
+    "plan_document_url": null,
+    "naic_code": "67369"
+  },
+  "deductibles": {
+    "in_network": {
+      "individual": 2500,
+      "family": 5000,
+      "currency": "USD",
+      "notes": "Applies to most services; copay-only services are exempt"
+    },
+    "out_of_network": {
+      "individual": null,
+      "family": null,
+      "currency": "USD",
+      "notes": "Out-of-network care not covered except in emergencies"
+    },
+    "combined_in_out_network": false
+  },
+  "out_of_pocket_maximum": {
+    "in_network": {
+      "individual": 7500,
+      "family": 15000,
+      "currency": "USD",
+      "includes_deductible": true,
+      "includes_copays": true,
+      "includes_coinsurance": true
+    },
+    "out_of_network": {
+      "individual": null,
+      "family": null,
+      "notes": "Not applicable — out-of-network not covered"
+    }
+  },
+  "copays": {
+    "primary_care_visit": {
+      "in_network": "$25",
+      "out_of_network": "Not covered",
+      "applies_before_deductible": true,
+      "notes": "PCP must be selected from LocalPlus network"
+    },
+    "specialist_visit": {
+      "in_network": "$75",
+      "out_of_network": "Not covered",
+      "applies_before_deductible": true,
+      "notes": "Referral from PCP required for non-OB/GYN specialists"
+    },
+    "urgent_care": {
+      "in_network": "$60",
+      "out_of_network": "$60 (emergency-equivalent facilities only)",
+      "applies_before_deductible": true
+    },
+    "emergency_room": {
+      "in_network": "$400 per visit",
+      "out_of_network": "$400 per visit (waived if admitted within 24 hours)",
+      "applies_before_deductible": false,
+      "notes": "Copay applies after deductible; true emergencies covered OON at in-network cost"
+    },
+    "telehealth": {
+      "in_network": "$0 via MDLIVE; $25 via PCP telehealth",
+      "out_of_network": "Not covered",
+      "applies_before_deductible": true
+    }
+  },
+  "coinsurance": {
+    "in_network": "30%",
+    "out_of_network": "Not covered",
+    "applies_after_deductible": true
+  },
+  "prescription_drugs": {
+    "formulary_name": "Cigna Formulary 2 — Standard 2024",
+    "deductible": {
+      "individual": 500,
+      "family": 1000,
+      "currency": "USD",
+      "notes": "Separate Rx deductible; Tier 1 generics exempt from deductible"
+    },
+    "tiers": {
+      "tier_1_generic": {
+        "retail_30_day": "$10",
+        "mail_order_90_day": "$20",
+        "notes": "Preferred generics; no deductible applies"
+      },
+      "tier_2_preferred_brand": {
+        "retail_30_day": "$55",
+        "mail_order_90_day": "$110",
+        "notes": "After Rx deductible"
+      },
+      "tier_3_non_preferred_brand": {
+        "retail_30_day": "$100",
+        "mail_order_90_day": "$200",
+        "notes": "After Rx deductible"
+      },
+      "tier_4_specialty": {
+        "retail_30_day": "30% up to $300 per fill",
+        "mail_order_90_day": "30% up to $600 per fill",
+        "notes": "Specialty pharmacy required; prior authorization required for all Tier 4 drugs"
+      }
+    },
+    "mail_order_required_for_maintenance": true,
+    "mail_order_mandatory_after_fills": 2,
+    "specialty_pharmacy": "Cigna Specialty Pharmacy or designated specialty network"
+  },
+  "covered_services": {
+    "preventive_care": {
+      "in_network": "No charge",
+      "out_of_network": "Not covered",
+      "notes": "ACA-mandated preventive services 100% covered in-network"
+    },
+    "inpatient_hospital": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered (emergency exception applies)",
+      "preauthorization_required": true,
+      "notes": "Must be admitted to a Cigna LocalPlus participating hospital"
+    },
+    "outpatient_surgery": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true
+    },
+    "lab_tests": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "notes": "Lab must be performed at Cigna-participating lab; LabCorp and Quest covered"
+    },
+    "imaging_xray": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered"
+    },
+    "imaging_ct_mri_pet": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true
+    },
+    "mental_health_outpatient": {
+      "in_network": "$25 copay per visit",
+      "out_of_network": "Not covered",
+      "applies_before_deductible": true,
+      "parity_compliant": true
+    },
+    "mental_health_inpatient": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true
+    },
+    "substance_use_disorder_outpatient": {
+      "in_network": "$25 copay per visit",
+      "out_of_network": "Not covered",
+      "parity_compliant": true
+    },
+    "substance_use_disorder_inpatient": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true
+    },
+    "physical_therapy": {
+      "in_network": "$75 copay per visit",
+      "out_of_network": "Not covered",
+      "visit_limit": "45 visits per year combined PT/OT/ST",
+      "applies_before_deductible": true
+    },
+    "occupational_therapy": {
+      "in_network": "$75 copay per visit",
+      "out_of_network": "Not covered",
+      "visit_limit": "45 visits per year combined PT/OT/ST",
+      "applies_before_deductible": true
+    },
+    "speech_therapy": {
+      "in_network": "$75 copay per visit",
+      "out_of_network": "Not covered",
+      "visit_limit": "45 visits per year combined PT/OT/ST",
+      "applies_before_deductible": true
+    },
+    "chiropractic_care": {
+      "in_network": "$75 copay per visit",
+      "out_of_network": "Not covered",
+      "visit_limit": "20 visits per year",
+      "applies_before_deductible": true
+    },
+    "home_health_care": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "visit_limit": "100 visits per year",
+      "preauthorization_required": true
+    },
+    "skilled_nursing_facility": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "day_limit": "90 days per year",
+      "preauthorization_required": true
+    },
+    "hospice_care": {
+      "in_network": "No charge",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true
+    },
+    "durable_medical_equipment": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": "For items over $300"
+    },
+    "maternity_prenatal": {
+      "in_network": "$25 copay first visit; then no charge for routine prenatal",
+      "out_of_network": "Not covered"
+    },
+    "maternity_delivery": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true,
+      "notes": "Notify Cigna within 48 hours of delivery"
+    },
+    "pediatric_dental": {
+      "in_network": "Preventive: No charge; Basic: 30% after deductible; Major: 50% after deductible",
+      "out_of_network": "Not covered",
+      "notes": "Embedded in medical plan for members under age 19; ACA pediatric dental EHB"
+    },
+    "pediatric_vision": {
+      "in_network": "One exam per year no charge; frames or contacts up to $100 allowance",
+      "out_of_network": "Not covered"
+    },
+    "acupuncture": {
+      "in_network": "Not covered",
+      "out_of_network": "Not covered"
+    },
+    "bariatric_surgery": {
+      "in_network": "Not covered",
+      "out_of_network": "Not covered",
+      "notes": "Excluded from this plan"
+    },
+    "infertility_treatment": {
+      "in_network": "Diagnostic services: 30% after deductible; Treatment: Not covered",
+      "out_of_network": "Not covered"
+    },
+    "transplants": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "Not covered",
+      "preauthorization_required": true,
+      "notes": "Must use Cigna Lifesource transplant network facility"
+    },
+    "ambulance": {
+      "in_network": "30% coinsurance after deductible",
+      "out_of_network": "30% coinsurance after deductible",
+      "notes": "Emergency ambulance covered at in-network rate regardless of transport provider"
+    },
+    "vision_exam_adult": {
+      "in_network": "Not covered under medical; separate vision plan available",
+      "out_of_network": "Not covered"
+    },
+    "dental_adult": {
+      "in_network": "Not covered under medical; separate dental plan available",
+      "out_of_network": "Not covered"
+    }
+  },
+  "visit_limits": {
+    "physical_therapy": "45 combined PT/OT/ST visits per plan year",
+    "occupational_therapy": "45 combined PT/OT/ST visits per plan year",
+    "speech_therapy": "45 combined PT/OT/ST visits per plan year",
+    "chiropractic": "20 visits per plan year",
+    "home_health": "100 visits per plan year",
+    "skilled_nursing_facility": "90 days per plan year",
+    "mental_health_outpatient": "Unlimited (parity)",
+    "substance_use_disorder_outpatient": "Unlimited (parity)"
+  },
+  "preauthorization_requirements": [
+    "Inpatient hospital admission (non-emergency)",
+    "Skilled nursing facility",
+    "Home health care",
+    "Outpatient surgery",
+    "CT, MRI, PET scans",
+    "Organ and tissue transplants",
+    "Specialty pharmacy drugs (Tier 4)",
+    "Durable medical equipment over $300",
+    "Maternity delivery (notification required within 48 hours of delivery)",
+    "Inpatient mental health and substance use disorder treatment",
+    "Hospice care"
+  ],
+  "network_information": {
+    "network_type": "HMO — closed panel",
+    "requires_pcp": true,
+    "pcp_selection_required_at_enrollment": true,
+    "requires_referrals": true,
+    "referral_exceptions": ["OB/GYN", "Pediatrician self-referral for children"],
+    "out_of_network_covered": false,
+    "out_of_network_emergency_exception": true,
+    "provider_directory_url": null,
+    "tiered_network": false,
+    "national_network": false,
+    "service_area": "Varies by state — LocalPlus network available in select metro areas"
+  },
+  "exclusions": [
+    "All out-of-network services except true emergencies",
+    "Cosmetic surgery unless medically necessary (e.g., reconstructive post-mastectomy covered)",
+    "Experimental or investigational treatments not approved by Cigna Medical Policy",
+    "Bariatric surgery and related services",
+    "Infertility treatment (diagnostic services covered)",
+    "Acupuncture",
+    "Adult routine dental and orthodontia",
+    "Adult routine vision exams and eyewear",
+    "Long-term custodial care",
+    "Private duty nursing in hospital setting",
+    "Non-emergency care received outside designated service area",
+    "Services for which the member has no legal obligation to pay"
+  ],
+  "additional_benefits": {
+    "wellness_programs": "Cigna Healthy Rewards — up to $400 incentive for completing health assessment and biometric screening",
+    "employee_assistance_program": "Cigna EAP — 3 free counseling sessions per issue per year, 24/7 phone support",
+    "nurse_advice_line": "24/7 — 1-800-244-6224",
+    "telemedicine": "MDLIVE — $0 for medical; $0 for behavioral health",
+    "fitness_reimbursement": "Not included in base plan; available as employer add-on",
+    "second_opinion": "Covered as specialist visit with referral",
+    "case_management": "Complex case management for high-cost chronic conditions at no additional charge",
+    "diabetes_management": "Cigna Diabetes Management Program — no-cost supplies and coaching for eligible members"
+  },
+  "cost_sharing_reductions": {
+    "eligible": false,
+    "notes": "Large group plan; CSR not applicable"
+  }
+}
